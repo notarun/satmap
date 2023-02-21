@@ -1,0 +1,11 @@
+{
+  "name": "satmap",
+  "version": "0.0.0",
+  "description": "The 3D Satellite Map",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "workspaces": ["packages/*"],
+  "author": "Arun S. Negi <arunsnegi@protonmail.com>",
+  "license": "MIT"
+}
