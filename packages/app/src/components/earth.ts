@@ -7,10 +7,10 @@ import earthMap from '../assets/earthmap1k.jpg';
 // - https://threejs.org/docs/#api/en/geometries/SphereGeometry
 export default class Earth extends Mesh {
   constructor() {
-    const geometry = new SphereGeometry(0.5, 32, 32);
-    const material = new MeshBasicMaterial();
-
-    material.map = (new TextureLoader).load(earthMap);
+    const geometry = new SphereGeometry(0.5, 64, 64);
+    const material = new MeshBasicMaterial({
+      map: (new TextureLoader).load(earthMap),
+    });
 
     super(geometry, material);
   }

@@ -9,9 +9,6 @@ const seedScene = new SeedScene();
 
 scene.add(seedScene);
 
-camera.position.set(0, 0, 3);
-camera.lookAt(0, 0, 0);
-
 function onAnimationFrameHandler() {
   renderer.render(scene, camera);
   seedScene?.update && seedScene?.update();
@@ -22,6 +19,8 @@ function windowResizeHandler() {
   const { innerHeight, innerWidth } = window;
   renderer.setSize(innerWidth, innerHeight);
   camera.aspect = innerWidth / innerHeight;
+  camera.position.set(0, 0, 1.5);
+  camera.lookAt(0, 0, 0);
   camera.updateProjectionMatrix();
 }
 
