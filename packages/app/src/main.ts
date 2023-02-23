@@ -1,5 +1,5 @@
 import { PerspectiveCamera, Scene, WebGLRenderer } from 'three';
-import SeedScene from './objects/scene';
+import SeedScene from './scene';
 import './style.css';
 
 const scene = new Scene();
