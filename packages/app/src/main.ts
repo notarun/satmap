@@ -1,10 +1,31 @@
-import './style.css'
+import { PerspectiveCamera, Scene, WebGLRenderer } from 'three';
+import SeedScene from './objects/scene';
+import './style.css';
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <h1>satmap</h1>
-    <div>The 3D Satellite Map</p>
-  </div>
-`
+const scene = new Scene();
+const camera = new PerspectiveCamera();
+const renderer = new WebGLRenderer();
+const seedScene = new SeedScene();
 
-console.log('init');
+scene.add(seedScene);
+
+camera.position.set(0, 0, 3);
+camera.lookAt(0, 0, 0);
+
+function onAnimationFrameHandler() {
+  renderer.render(scene, camera);
+  seedScene?.update && seedScene?.update();
+  window.requestAnimationFrame(onAnimationFrameHandler);
+};
+
+function windowResizeHandler() {
+  const { innerHeight, innerWidth } = window;
+  renderer.setSize(innerWidth, innerHeight);
+  camera.aspect = innerWidth / innerHeight;
+  camera.updateProjectionMatrix();
+}
+
+windowResizeHandler();
+window.requestAnimationFrame(onAnimationFrameHandler);
+window.addEventListener('resize', windowResizeHandler);
+document.body.appendChild(renderer.domElement);
