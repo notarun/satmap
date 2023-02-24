@@ -11,7 +11,5 @@ export default class SeedScene extends Group {
     this.add(this.earth, this.starfield);
   }
 
-  update() {
-    this.earth.update();
-  }
+  update() {}
 }

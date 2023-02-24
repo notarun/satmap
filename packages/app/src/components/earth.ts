@@ -1,5 +1,5 @@
 import { Mesh, MeshBasicMaterial, SphereGeometry, TextureLoader } from 'three';
-import earthMap from '../assets/earthmap1k.jpg';
+import earthMap from '../assets/earthmap4k.jpg';
 
 // Links:
 // - https://web.archive.org/web/20140209081927/http://learningthreejs.com/blog/2013/09/16/how-to-make-the-earth-in-webgl/
@@ -13,10 +13,5 @@ export default class Earth extends Mesh {
     });
 
     super(geometry, material);
-  }
-
-  update() {
-    this.rotation.x += 0.0005;
-    this.rotation.y += 0.0005;
   }
 }
