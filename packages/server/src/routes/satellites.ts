@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { findAllSatellites } from '../database';
+import { findAllSatellites } from '~shared/libs/database';
 
 export default Router()
   .get('/', async (_, res) => {

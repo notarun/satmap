@@ -1,0 +1,14 @@
+{
+  "name": "~shared",
+  "private": "true",
+  "scripts": {
+    "build": "tsc"
+  },
+  "version": "0.0.0",
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.3"
+  },
+  "dependencies": {
+    "better-sqlite3": "^8.1.0"
+  }
+}
