@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "ts-node ./src/cli.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "start": "node ./dist/cli.js"
   },
   "dependencies": {
     "commander": "^10.0.0",
