@@ -1,6 +1,7 @@
 {
   "name": "~shared",
   "private": "true",
+  "main": "./dist/index.js",
   "scripts": {
     "build": "tsc"
   },

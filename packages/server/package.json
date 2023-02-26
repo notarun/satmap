@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "build": "tsc",
+    "build": "tsc -b",
     "start": "node src/server.js"
   },
   "dependencies": {

@@ -6,5 +6,7 @@
     "target": "es6",
     "esModuleInterop": true
   },
-  "references": [{ "path": "../shared" }]
+  "references": [
+    { "path": "../shared" }
+  ]
 }

@@ -1,2 +1,3 @@
 node_modules/
-satmap.db
+satmap.db*
+*.tsbuildinfo

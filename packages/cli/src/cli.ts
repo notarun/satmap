@@ -1,7 +1,7 @@
 import { Command } from 'commander';
-import database from './commands/database';
+import seed from './commands/seed';
 
 (new Command())
   .version('0.0.0')
-  .addCommand(database)
+  .addCommand(seed)
   .parse(process.argv);

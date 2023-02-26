@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "The 3D Satellite Map",
   "scripts": {
-    "db:init": "sqlite3 satmap.db < migrations/2023-02-27-init.sql"
+    "db:init": "sqlite3 satmap.db < migrations/0-init.sql"
   },
   "workspaces": ["packages/*"],
   "author": "Arun S. Negi <arunsnegi@protonmail.com>",
