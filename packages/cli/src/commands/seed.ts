@@ -1,13 +1,13 @@
 import { Command } from 'commander';
 import { getCatalogNumber } from 'tle.js';
 import config from '../config';
-import { setupDatabase, bulkInsertSatelliteTles } from '~shared/libs/database';
+import { database } from '~shared';
 
 export default (new Command())
   .command('seed')
   .description('Seed the TLE data')
   .action(async () => {
-    setupDatabase(config.dbPath);
+    database.setup(config.dbPath);
 
     const response = await fetch('https://celestrak.org/NORAD/elements/gp.php?GROUP=stations&FORMAT=tle');
     const lines = (await response.text()).trim().split('\r\n')
@@ -25,6 +25,6 @@ export default (new Command())
       toInsert.push(tle);
     }
 
-    bulkInsertSatelliteTles(toInsert);
+    database.bulkInsertSatelliteTles(toInsert);
     console.info('Seeding from celestrak complete');
   });

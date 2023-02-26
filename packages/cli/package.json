@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "ts-node ./src/cli.ts",
-    "build": "tsc -b",
+    "build": "tsc",
     "start": "node ./dist/cli.js"
   },
   "dependencies": {

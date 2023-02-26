@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "build": "tsc -b",
-    "start": "node src/server.js"
+    "build": "tsc",
+    "start": "node dist/server.js"
   },
   "dependencies": {
     "~shared": "^0.0.0",

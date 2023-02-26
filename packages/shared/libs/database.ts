@@ -3,7 +3,7 @@ import path from 'path';
 
 let db: BetterSqlite.Database;
 
-export async function setupDatabase(dbPath: string) {
+export async function setup(dbPath: string) {
   if (db) return;
   db = new BetterSqlite(dbPath);
   console.log(`Using database ${path.resolve(dbPath)}`);

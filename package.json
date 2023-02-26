@@ -3,9 +3,18 @@
   "version": "0.0.0",
   "description": "The 3D Satellite Map",
   "scripts": {
+    "clean": "rimraf packages/app/dist packages/server/dist packages/shared/dist packages/shared/tsconfig.tsbuildinfo",
     "db:init": "sqlite3 satmap.db < migrations/0-init.sql"
   },
-  "workspaces": ["packages/*"],
+  "workspaces": [
+    "packages/shared/",
+    "packages/cli/",
+    "packages/server/",
+    "packages/app/"
+  ],
   "author": "Arun S. Negi <arunsnegi@protonmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "rimraf": "^4.1.2"
+  }
 }

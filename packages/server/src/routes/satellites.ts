@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import { findAllSatellites } from '~shared/libs/database';
+import { database } from '~shared';
 
 export default Router()
   .get('/', async (_, res) => {
-    const satellites = await findAllSatellites();
+    const satellites = await database.findAllSatellites();
     return res.send(satellites);
   });
