@@ -2,6 +2,12 @@
 
 > The 3D Satellite Map
 
+### Prerequisite
+
+- `node 16`
+- `npm 9`
+- `sqlite 3`
+
 ### Setup
 
 ```bash
@@ -9,11 +15,22 @@ git clone https://github.com/notarun/satmap
 cd satmap
 npm install
 
+# create database and seed the inital data
+npm run db:init
+
 # start development servers
-npm run dev -w packages/app
+npm run dev -w app    # frontend
+npm run dev -w cli    # command line
+npm run dev -w server # api server
 
 # create production build
 npm run build -ws
+
+# production server
+npm run start -w server
+
+# fetch and seed latest TLE data
+npm run start -w cli seed
 ```
 
 ### Links
