@@ -11,15 +11,6 @@ const controls = new OrbitControls(camera, renderer.domElement);
 
 scene.add(seedScene);
 
-camera.aspect = window.innerWidth / window.innerHeight;
-camera.position.set(0, 0, 1.5);
-camera.lookAt(0, 0, 0);
-camera.updateProjectionMatrix();
-
-controls.minDistance = 0.7;
-controls.maxDistance = 4;
-controls.update();
-
 function onAnimationFrameHandler() {
   renderer.render(scene, camera);
   seedScene?.update && seedScene?.update();
@@ -28,6 +19,16 @@ function onAnimationFrameHandler() {
 
 function windowResizeHandler() {
   const { innerHeight, innerWidth } = window;
+
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.position.set(0, 0, 1.5);
+  camera.lookAt(0, 0, 0);
+  camera.updateProjectionMatrix();
+
+  controls.minDistance = 0.7;
+  controls.maxDistance = 4;
+  controls.update();
+
   renderer.setSize(innerWidth, innerHeight);
 }
 
