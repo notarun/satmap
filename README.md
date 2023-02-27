@@ -2,7 +2,7 @@
 
 > The 3D Satellite Map
 
-![stamap screen](https://github.com/notarun/satmap/blob/master/.github/screen.jpg?raw=true)
+![stamap screen](https://raw.githubusercontent.com/notarun/satmap/master/.github/screen.png)
 
 ### Prerequisite
 
