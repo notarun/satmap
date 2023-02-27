@@ -2,20 +2,20 @@ import { Group } from 'three';
 import Earth from './components/earth';
 import Satellite from './components/satellite';
 import Startfield from './components/starfield';
+import { ISatellite } from './services/satellites';
 
 export default class SeedScene extends Group {
-  constructor(
-    private earth = new Earth(),
-    private satellite = new Satellite(`ISS (ZARYA)
-1 25544U 98067A   23055.76102899  .00017033  00000+0  31328-3 0  9990
-2 25544  51.6390 165.4065 0005379  24.5892 135.6596 15.49298512384351`),
-    private starfield = new Startfield(),
-  ) {
+  private earth = new Earth();
+  private starfield = new Startfield();
+  private satellites: Array<Satellite> = [];
+
+  constructor(satellitesData: ISatellite[]) {
     super();
-    this.add(this.earth, this.satellite, this.starfield);
+    this.satellites.push(...satellitesData.map((d) => new Satellite(d)));
+    this.add(this.earth, this.starfield, ...this.satellites);
   }
 
   update() {
-    this.satellite.update();
+    this.satellites.forEach((s) => s.update());
   }
 }
