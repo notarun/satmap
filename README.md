@@ -2,6 +2,8 @@
 
 > The 3D Satellite Map
 
+![stamap screen](https://github.com/notarun/satmap/blob/master/.github/screen.jpg?raw=true)
+
 ### Prerequisite
 
 - `node 16`
