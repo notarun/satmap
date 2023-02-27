@@ -1,1 +1,58 @@
-body { margin: 0; }
+* {
+  font-size: 28px;
+  font-family: monospace;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.search-container {
+  width: 100vw;
+  position: absolute;
+  background-color: #333;
+}
+
+.search-container input {
+  margin: 0;
+  float: left;
+  width: 100vw;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.search-suggestions {
+  background: #fff;
+}
+
+.search-suggestions > ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: block;
+  max-height: 400px;
+  width: 100vw;
+  overflow-y: scroll;
+}
+
+.search-suggestions > ol > li {
+  padding: 8px;
+}
+
+.search-suggestions > ol > li:hover {
+  background: #9c9c9c;
+  cursor: pointer;
+}
+
+.sat-info {
+  font-size: 22px;
+  padding: 1em;
+  position: absolute;
+  height: 200px;
+  width: 700px;
+  border-top: 10px;
+  top: calc(100vh - 240px);
+  left: 10px;
+  background-color: #fff;
+}

@@ -2,6 +2,7 @@ import { getLatLngObj } from 'tle.js';
 import { Mesh, MeshBasicMaterial, SphereGeometry } from 'three';
 import { calcPosFromLatLonRad } from '../utils';
 import { ISatellite } from '../services/satellites';
+import { renderSatInfo } from '../dom';
 
 // https://mattloftus.github.io/2016/02/03/threejs-p2/
 export default class Satellite extends Mesh {
@@ -13,6 +14,7 @@ export default class Satellite extends Mesh {
     const material = new MeshBasicMaterial({ color: 0xfdcf09 });
     super(geometry, material);
     this.tle = `${data.name}\n${data.tle_line1}\n${data.tle_line2}`;
+    this.addEventListener('click', () => renderSatInfo(data));
   }
 
   update() {

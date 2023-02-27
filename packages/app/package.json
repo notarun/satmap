@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "three": "^0.149.0",
+    "three.interactive": "^1.5.2",
     "tle.js": "^4.7.3"
   }
 }
