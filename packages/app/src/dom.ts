@@ -28,8 +28,9 @@ export function renderSatInfo(info?: ISatellite) {
     satInfoEl.style.display = 'none';
     return;
   }
-  const elevation = 0;
-  const { lat, lng } = getLatLngObj(`${info.name}\n${info.tle_line1}\n${info.tle_line2}`, +(new Date) + (15 * 60));
+  const now = +(new Date);
+  const tle = `${info.name}\n${info.tle_line1}\n${info.tle_line2}`;
+  const { lat, lng } = getLatLngObj(tle, now + (15 * 60));
   satInfoEl.style.display = 'block';
   satInfoEl.innerHTML = `
     Name: ${info.name}<br>
@@ -37,7 +38,6 @@ export function renderSatInfo(info?: ISatellite) {
     Orbit Type: ${info.orbit_type}<br>
     Launch Date: ${info.launch_date}<br>
     Source: ${info.source_code} (${info.source_description})<br>
-    Elevation: ${elevation}km<br>
     Future coordinates (15 min): ${lat} ${lng}
   `;
 }

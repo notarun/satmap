@@ -49,10 +49,10 @@ body {
   font-size: 22px;
   padding: 1em;
   position: absolute;
-  height: 200px;
+  height: 180px;
   width: 700px;
   border-top: 10px;
-  top: calc(100vh - 240px);
+  top: calc(100vh - 200px);
   left: 10px;
   background-color: #fff;
 }
