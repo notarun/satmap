@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "The 3D Satellite Map",
   "scripts": {
-    "clean": "rimraf packages/app/dist packages/server/dist packages/shared/dist packages/shared/tsconfig.tsbuildinfo",
+    "clean": "rimraf packages/app/dist packages/server/dist packages/shared/dist packages/shared/tsconfig.tsbuildinfo satmap.db",
     "db:init": "sqlite3 satmap.db < migrations/0-init.sql"
   },
   "workspaces": [
